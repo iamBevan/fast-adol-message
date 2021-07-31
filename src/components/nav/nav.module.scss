@@ -1,0 +1,54 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass//abstracts//mixins";
+
+.button-container {
+	width: 100%;
+	height: 5rem;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	@include respond(phone) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 15rem;
+	}
+
+	button {
+		background-color: green;
+		color: gold;
+		font-size: 1.2rem;
+		font-weight: 800;
+		padding: 1rem 2rem;
+		outline: none;
+		border: none;
+		transition: all ease-in 25ms;
+		box-shadow: 2px 2px rgb(53, 50, 50);
+
+		@include respond(phone) {
+			padding: 0.2rem 0.4rem;
+			font-size: 0.8rem;
+			margin: 1rem;
+		}
+
+		@include respond(tab-port) {
+			padding: 0.5rem 1rem;
+		}
+
+		&:focus {
+			border: none;
+			outline: none;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+			box-shadow: 1px 1px rgb(53, 50, 50);
+		}
+
+		&:active {
+			transform: scale(0.96);
+			box-shadow: 4px 4px rgb(53, 50, 50);
+		}
+	}
+}

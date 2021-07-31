@@ -1,0 +1,132 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass//abstracts//mixins";
+
+.container {
+	background-color: #1061088e;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__body {
+		background-color: #ffffff;
+		height: 80%;
+		width: 80%;
+		box-shadow: 2px 5px 115px -14px black;
+		border-radius: 4px;
+		position: relative;
+		overflow: hidden;
+
+		@include respond(phone) {
+			width: 18rem;
+			height: 47rem;
+			margin: 0;
+			overflow: scroll;
+		}
+
+		@include respond(tab-port) {
+			overflow: scroll;
+		}
+
+		@include respond(tab-land) {
+			overflow: hidden;
+		}
+
+		.children {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		.close-btn {
+			bottom: 1rem;
+			position: absolute;
+			background-color: green;
+			color: gold;
+			font-weight: 600;
+			right: 1rem;
+			outline: none;
+			padding: 0.5rem 1rem;
+			z-index: 9999;
+			transition: all ease-in 45ms;
+
+			@include respond(phone) {
+				position: fixed;
+				right: 1rem;
+				bottom: 1rem;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			&:active {
+				transform: scale(0.9);
+			}
+		}
+
+		.copy-btn {
+			top: 1rem;
+			position: absolute;
+			background-color: green;
+			color: gold;
+			font-weight: 600;
+			left: 1rem;
+			outline: none;
+			padding: 0.5rem 1rem;
+			z-index: 9999;
+			transition: all ease-in 45ms;
+
+			@include respond(phone) {
+				position: fixed;
+				right: 1rem;
+				bottom: 1rem;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			&:active {
+				transform: scale(0.9);
+			}
+		}
+	}
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		background-color: $primary-header;
+		font-family: roboto;
+		font-weight: 900;
+		letter-spacing: 0.2rem;
+		text-transform: uppercase;
+		line-height: 3.5rem;
+		height: 5rem;
+		width: 100%;
+		border-bottom: 2px $primary-home solid;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		font-size: 2 rem;
+
+		&-info {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			padding: 0;
+			margin: -1rem;
+			p {
+				font-size: 0.5rem;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
